@@ -19,7 +19,7 @@ pipeline {
             """)
          }
       }
-      stage('Start test app') {
+      /*stage('Start test app') {
          steps {
             pwsh(script: """
                docker-compose up -d
@@ -62,9 +62,9 @@ pipeline {
             stage('Run Trivy') {
                steps {
                   sleep(time: 30, unit: 'SECONDS')
-                  // pwsh(script: """
-                  // C:\\Windows\\System32\\wsl.exe -- sudo trivy blackdentech/jenkins-course
-                  // """)
+                   pwsh(script: """
+                   C:\\Windows\\System32\\wsl.exe -- sudo trivy blackdentech/jenkins-course
+                   """)
                }
             }
          }
@@ -77,7 +77,7 @@ pipeline {
             echo "Deploying to ${ENVIRONMENT}"
             acsDeploy(
                azureCredentialsId: "jenkins_demo",
-               configFilePaths: "**/*.yaml",
+               configFilePaths: "**.yaml",
                containerService: "${ENVIRONMENT}-demo-cluster | AKS",
                resourceGroupName: "${ENVIRONMENT}-demo",
                sshCredentialsId: ""
@@ -114,12 +114,12 @@ pipeline {
             echo "Deploying to ${ENVIRONMENT}"
             acsDeploy(
                azureCredentialsId: "jenkins_demo",
-               configFilePaths: "**/*.yaml",
+               configFilePaths: "**.yaml",
                containerService: "${ENVIRONMENT}-demo-cluster | AKS",
                resourceGroupName: "${ENVIRONMENT}-demo",
                sshCredentialsId: ""
             )
          }
-      }
+      }*/
    }
 }
