@@ -32,13 +32,16 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository
+                echo "one"
                 git url: 'https://github.com/PrajwalKN9071/azure-voting-app-redis', branch: 'main'
+                echo "two"
             }
         }
         
         stage('Build Docker Image') {
             steps {
                 script {
+                    echo "three"
                     def dockerImage = docker.build('jenkinspipeline:tag', '.')
                 }
             }
