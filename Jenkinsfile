@@ -42,7 +42,8 @@ pipeline {
             steps {
                 script {
                     echo "three"
-                    def dockerImage = docker.build('jenkinspipeline:tag', '.')
+                    def dockerImage = docker.build('jenkinspipeline:1.0', '.')
+                    echo "four"
                 }
             }
         }
