@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
    agent any
 
    stages {
@@ -23,4 +23,26 @@ pipeline {
          }
       }
    }
+}*/
+
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the repository
+                git url: 'https://github.com/PrajwalKN9071/azure-voting-app-redis', branch: 'main'
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    def dockerImage = docker.build('jenkinspipeline:tag', '.')
+                }
+            }
+        }
+    }
 }
+
