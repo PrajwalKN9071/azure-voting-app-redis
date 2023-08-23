@@ -33,7 +33,7 @@ pipeline {
             steps {
                 // Checkout the repository
                 echo "one"
-                git url: 'https://github.com/PrajwalKN9071/azure-voting-app-redis', branch: 'main'
+                git url: 'https://github.com/PrajwalKN9071/azure-voting-app-redis', branch: 'master'
                 echo "two"
             }
         }
