@@ -10,7 +10,7 @@ pipeline {
       stage('Docker Build') {
          steps {
             echo "one"
-            //pwsh(script: 'docker images -a')
+            pwsh(script: 'docker images -a')
             echo "two"
             pwsh(script: """
                cd azure-vote\
