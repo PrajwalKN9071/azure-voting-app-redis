@@ -35,6 +35,8 @@ pipeline {
             steps {
                 // Checkout the repository
                 echo "one"
+                apt update
+                apt install docker-ce
                 git url: 'https://github.com/PrajwalKN9071/azure-voting-app-redis', branch: 'master'
                 echo "two"
             }
