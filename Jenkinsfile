@@ -10,13 +10,13 @@ pipeline {
       stage('Docker Build') {
          steps {
             echo "one"
-            pwsh(script: 'sudo -s docker images -a')
+            pwsh(script: 'sudo -S docker images -a')
             echo "two"
             pwsh(script: """
                cd azure-vote\
-               sudo -s docker images -a
-               sudo -s docker build -t jenkins-pipeline .
-               sudo -s docker images -a
+               sudo -S docker images -a
+               sudo -S docker build -t jenkins-pipeline .
+               sudo -S docker images -a
                cd ..
             """)
             echo "three"
