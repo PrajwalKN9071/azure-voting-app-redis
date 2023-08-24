@@ -15,8 +15,10 @@ pipeline {
             pwsh(script: """
                cd azure-vote\
                docker images -a
+               chmod 777 jenkins-pipeline
                docker build -t jenkins-pipeline .
                docker images -a
+               
                cd ..
             """)
             echo "three"
