@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
    agent any
 
    stages {
@@ -26,8 +26,8 @@ pipeline {
       }
    }
 }
-
-/*pipeline {
+*/
+pipeline {
     agent any
     
     stages {
@@ -51,5 +51,5 @@ pipeline {
         }
     }
 }
-*/
+
 
